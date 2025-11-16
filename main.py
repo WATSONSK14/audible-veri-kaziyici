@@ -29,7 +29,6 @@ class Scraper:
         self.release_date = []
         self.language = []
         self.rating = []
-        self.ürün = 1
         self.alfabe = [
     'a', 'b', 'c', 'ç', 'd', 'e', 'f', 'g', 'ğ', 'h', 'ı', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'ö', 'p',
     'r', 's', 'ş', 't', 'u', 'ü', 'v', 'y', 'z',
@@ -125,7 +124,6 @@ class Scraper:
                 "Rating": self.rating[i],
             }
 
-
     def csv(self):
         with open("books.csv", "w", newline="") as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames = ["Title", "Author", "Narrated", "Length", "ReleaseDate", "Language", "Rating"], delimiter=";")
@@ -143,8 +141,5 @@ class Scraper:
         self.book_ratings()
         self.book_dictionary()
         self.csv()
-
-
-
 scraper = Scraper(search_query="book", node="18573211011")
 data = scraper.run()
