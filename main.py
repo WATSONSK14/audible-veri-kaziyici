@@ -148,5 +148,3 @@ class Scraper:
 
 scraper = Scraper(search_query="book", node="18573211011")
 data = scraper.run()
-
-print(scraper.narrated_list)
